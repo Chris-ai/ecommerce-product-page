@@ -24,7 +24,6 @@ export default {
   },
   methods: {
     goToNextImage() {
-      //   console.log(this.img);
       if (this.img < 4) {
         this.img += 1;
       } else {
@@ -51,13 +50,9 @@ export default {
   img {
     width: 100%;
     height: 100%;
-    /* object-fit: contain; */
   }
 
   .arrow-btn {
-    // padding: 1rem;
-    // width: 36px;
-    // height: 36px;
     height: 30px;
     width: 30px;
     border-radius: 50%;
@@ -65,12 +60,8 @@ export default {
     outline: none;
     background: var(--white);
     position: absolute;
-    // text-align: center;
     display: grid;
     place-items: center;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
     img {
       height: 13px;
       width: 9px;

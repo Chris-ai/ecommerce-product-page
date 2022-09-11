@@ -17,9 +17,9 @@ export default {
   components: { CartElement },
   props: ["counter"],
   methods: {
-    cartItemsTo0(event){
-      this.$emit("cartItemsAmountSet0", event)
-    }
+    cartItemsTo0(event) {
+      this.$emit("cartItemsAmountSet0", event);
+    },
   },
 };
 </script>
@@ -28,7 +28,6 @@ export default {
 .cart {
   position: absolute;
   top: -25px;
-  //   left: 0;
   right: -100px;
   margin: auto;
   width: 95vw;
@@ -37,16 +36,16 @@ export default {
   max-height: 250px;
   background: var(--white);
   border-radius: 10px;
-  -webkit-box-shadow: 0px 55px 100px -26px rgba(195, 195, 195, 1);
-  -moz-box-shadow: 0px 55px 100px -26px rgba(195, 195, 195, 1);
-  box-shadow: 0px 55px 100px -26px rgba(195, 195, 195, 1);
+  -webkit-box-shadow: 0px 16px 30px 2px rgb(240, 240, 240);
+  -moz-box-shadow: 0px 16px 30px 2px rgb(240, 240, 240);
+  box-shadow: 0px 16px 30px 2px rgb(240, 240, 240);
   transition: 0.3s ease all;
   animation: 0.3s showFromTop ease-in-out;
 
   .title {
     width: 100%;
     padding: 1.2rem;
-    border-bottom: 1px solid var(--pale-orange);
+    border-bottom: 1px solid #e8e8e8;
     animation: 0.7s showUp ease-in-out;
   }
 
@@ -56,10 +55,6 @@ export default {
     animation: 0.7s showUp ease-in-out;
   }
 
-  //   @media(min-width: 580px){
-  //     right: 0;
-  //   }
-
   @media (max-width: 1200px) {
     right: 0;
   }
@@ -67,6 +62,7 @@ export default {
     top: 20px;
     left: 0;
     right: 0;
+    box-shadow: none;
   }
 }
 </style>

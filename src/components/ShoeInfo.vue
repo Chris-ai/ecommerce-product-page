@@ -59,9 +59,13 @@ export default {
         this.counter--;
       }
     },
-    addToCart(){
-      this.$emit("addToCart", this.counter)
-    }
+    addToCart() {
+      if (this.counter != 0) {
+        this.$emit("addToCart", this.counter);
+      } else {
+        alert("You can't add 0 shoes to cart, try again :)")
+      }
+    },
   },
 };
 </script>
@@ -71,7 +75,6 @@ export default {
   width: 100%;
   max-width: 510px;
   padding: 1.2rem;
-  //   max-width: 30px;
 
   h5 {
     font-size: 12px;
@@ -114,7 +117,6 @@ export default {
       place-items: center;
       content: "50%";
       height: 60%;
-      // min-width: 10px;
       border-radius: 6px;
       background: var(--pale-orange);
       color: var(--orange);
@@ -196,7 +198,6 @@ export default {
     cursor: pointer;
     box-shadow: 0px 15px 25px 2px rgba(252, 167, 64, 0.267);
     transition: 0.3s ease all;
-    // font-size: 18px;
     letter-spacing: 0.5px;
     display: flex;
     justify-content: center;
@@ -223,9 +224,6 @@ export default {
   }
 
   @media (min-width: 800px) {
-    // height: 100%;
-    // align-content: ;
-    // padding: 0;
     h2 {
       font-size: 38px;
     }

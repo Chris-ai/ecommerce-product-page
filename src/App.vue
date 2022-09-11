@@ -28,7 +28,6 @@
         class="column"
         v-show="!mobile"
       />
-      <!-- <DesktopImages class="column" v-show="!mobile" /> -->
     </div>
   </div>
 </template>
@@ -78,7 +77,6 @@ export default {
       this.amount = event;
     },
     changeDesktopCarouselState() {
-      console.log("clicked")
       this.showDesktopCarousel = !this.showDesktopCarousel;
     },
   },
@@ -152,8 +150,8 @@ export default {
   top: 0;
   bottom: 0;
   margin: auto;
-  // display: grid;
-  // place-items: center;
+  display: grid;
+  place-items: center;
   z-index: 10;
   background: rgba($color: black, $alpha: 0.7);
 }
@@ -185,6 +183,16 @@ export default {
 
   to {
     transform: scaleY(1);
+  }
+}
+
+@keyframes resizeX {
+  from{
+    transform: scaleX(0);
+  }
+
+  to{
+    transform: scaleX(1);
   }
 }
 </style>

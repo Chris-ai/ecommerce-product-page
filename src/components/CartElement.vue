@@ -28,13 +28,11 @@ export default {
   props: ["amount"],
   data() {
     return {
-      // amount: 3,
       totalPrice: 125.0,
     };
   },
   methods: {
     deleteCartElements() {
-      // console.log('delete items')
       this.$emit("removeItems", 0);
     },
   },
@@ -53,6 +51,9 @@ export default {
       color: var(--dark-grayish-blue);
       line-height: 1.5;
       font-size: 15px;
+      b{
+        color: var(--black);
+      }
     }
 
     img {

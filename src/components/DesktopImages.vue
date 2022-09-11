@@ -1,59 +1,67 @@
 <template>
   <div class="images">
     <img
-      v-show="imageId == 1"
+      @click="showDesktopCarousel"
+      v-show="imageId == 'thumbnail-1'"
       class="big-image"
       src="../assets/image-product-1.jpg"
       alt="bigImage"
     />
     <img
-      v-show="imageId == 2"
+      @click="showDesktopCarousel"
+      v-show="imageId == 'thumbnail-2'"
       class="big-image"
       src="../assets/image-product-2.jpg"
       alt="bigImage"
     />
     <img
-      v-show="imageId == 3"
+      @click="showDesktopCarousel"
+      v-show="imageId == 'thumbnail-3'"
       class="big-image"
       src="../assets/image-product-3.jpg"
       alt="bigImage"
     />
     <img
-      v-show="imageId == 4"
+      @click="showDesktopCarousel"
+      v-show="imageId == 'thumbnail-4'"
       class="big-image"
       src="../assets/image-product-4.jpg"
       alt="bigImage"
     />
 
     <div class="images-list">
-      <img
-        @click="chooseImage"
-        id="1"
-        class="thumbnail"
-        src="../assets/image-product-1-thumbnail.jpg"
-        alt=""
-      />
-      <img
-        @click="chooseImage"
-        id="2"
-        class="thumbnail"
-        src="../assets/image-product-2-thumbnail.jpg"
-        alt=""
-      />
-      <img
-        @click="chooseImage"
-        id="3"
-        class="thumbnail"
-        src="../assets/image-product-3-thumbnail.jpg"
-        alt=""
-      />
-      <img
-        @click="chooseImage"
-        id="4"
-        class="thumbnail"
-        src="../assets/image-product-4-thumbnail.jpg"
-        alt=""
-      />
+      <div id="thumbnail-1" class="img">
+        <img
+          @click="chooseImage"
+          class="thumbnail"
+          src="../assets/image-product-1-thumbnail.jpg"
+          alt="thumbnail-1"
+        />
+      </div>
+      <div id="thumbnail-2" class="img">
+        <img
+          @click="chooseImage"
+          class="thumbnail"
+          src="../assets/image-product-2-thumbnail.jpg"
+          alt="thumbnail-2"
+        />
+      </div>
+      <div id="thumbnail-3" class="img">
+        <img
+          @click="chooseImage"
+          class="thumbnail"
+          src="../assets/image-product-3-thumbnail.jpg"
+          alt="thumbnail-3"
+        />
+      </div>
+      <div id="thumbnail-4" class="img">
+        <img
+          @click="chooseImage"
+          class="thumbnail"
+          src="../assets/image-product-4-thumbnail.jpg"
+          alt="thumbnail-4"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -62,7 +70,7 @@
 export default {
   data() {
     return {
-      imageId: 1,
+      imageId: "thumbnail-1",
     };
   },
   methods: {
@@ -76,19 +84,17 @@ export default {
       });
     },
     chooseImage(e) {
-      // console.log(e.path[0].id);
-      this.imageId = e.path[0].id;
+      this.imageId = e.path[1].id;
 
-      let images = document.querySelectorAll(".thumbnail");
+      let images = document.querySelectorAll(".img");
       this.setClass(images);
+    },
+    showDesktopCarousel() {
+      this.$emit("changeDesktopCarouselStatus", true);
     },
   },
   mounted() {
-    document.getElementById('1').classList.add('selected-image')
-
-    document.querySelector('.big-image').addEventListener("click", () => {
-      this.$emit("changeDesktopCarouselStatus", true);
-    })
+    document.getElementById("thumbnail-1").classList.add("selected-image");
   },
 };
 </script>
@@ -116,23 +122,44 @@ export default {
     align-items: center;
     justify-content: center;
     margin: 2.4rem 0;
-    img {
+
+    .img {
       width: 70px;
       height: 70px;
-      margin: 0 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border-radius: 10px;
-      cursor: pointer;
+      // overflow: hidden;
+      margin: 0 1rem;
+
+      img {
+        width: 70px;
+        height: 70px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
 
       &:hover {
-        opacity: 0.5;
-        outline: 3px solid var(--orange);
+        img {
+          opacity: 0.5;
+        }
       }
     }
   }
 }
 
 .selected-image {
-  opacity: 0.5;
-  outline: 3px solid var(--orange);
+  position: relative;
+  &::after {
+    border-radius: 10px;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #fff, $alpha: 0.8);
+    outline: 2px solid var(--orange);
+    cursor: pointer;
+  }
 }
 </style>

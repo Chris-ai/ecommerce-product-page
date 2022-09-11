@@ -18,20 +18,21 @@
         </div>
 
         <div class="links">
-          <a href="/">Collections</a>
-          <a href="/">Men</a>
-          <a href="/">Women</a>
-          <a href="/">About</a>
-          <a href="/">Contact</a>
+          <a href="">Collections</a>
+          <a href="">Men</a>
+          <a href="">Women</a>
+          <a href="">About</a>
+          <a href="">Contact</a>
         </div>
       </div>
 
       <div class="right-col">
         <div @click="showCartBtn" class="nav-image state-controller">
-          <img src="../assets/icon-cart.svg" alt="cart" />
+          <img id="cart-icon" src="../assets/icon-cart.svg" alt="cart" />
           <div v-show="counter != 0" class="counter">{{ counter }}</div>
         </div>
         <div
+          @click="showCartBtn"
           id="avatar"
           class="nav-image state-controller"
         >
@@ -78,7 +79,7 @@ export default {
     },
     showCartBtn() {
       this.showCart = !this.showCart;
-      this.$emit('showCart', this.showCart)
+      this.$emit("showCart", this.showCart);
     },
   },
 };
@@ -102,6 +103,10 @@ export default {
     transition: 0.3s ease all;
   }
 
+  #cart-icon:hover {
+    filter: contrast(250%);
+  }
+
   .links {
     align-items: center;
     height: 100%;
@@ -113,13 +118,11 @@ export default {
       text-decoration: none;
       color: var(--grayish-blue);
       height: 100%;
-      //   text-align: center;
       display: flex;
       align-items: center;
       transition: 0.3s ease all;
       &:hover,
       &:focus {
-        // border-bottom: 4px solid var(--orange);
         box-shadow: inset 0 -5px 0 var(--orange);
         color: var(--very-dark-blue);
       }
@@ -133,7 +136,6 @@ export default {
     padding: 0.25rem;
     position: relative;
     display: flex;
-    // flex-direction: ;
     align-items: center;
     justify-content: center;
 
@@ -151,7 +153,7 @@ export default {
       align-items: center;
       padding: 0.35rem;
       border-radius: 50em;
-      // text-align: center;
+      animation: .2s resizeX ease-in-out;
     }
 
     img {
