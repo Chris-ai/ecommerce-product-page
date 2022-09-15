@@ -1,22 +1,21 @@
-# E-commerce product page solution
+# E-commerce product page
 
-This is a solution to the [E-commerce product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [E-commerce product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6). Frontend Mentor challenges help you improve your coding skills by building realistic projects. This is fully responsive single page application built with `Vue.js`. All styles are write in `SCSS`. 
 
-## Table of contents
+# 📝 Table of contents
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
+  - [Live Demo](#live-demo)
   - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
+- [Tech stack](#tech-stack)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
 - [Installation](#installation)
 - [Author](#author)
 
-## Overview
+# ✏️ Overview
 
-### The challenge
 
 Users should be able to:
 
@@ -27,34 +26,20 @@ Users should be able to:
 - Add items to the cart
 - View the cart and remove items from it
 
-### Screenshot
+# 🟢 Live demo - [E-commerce product page](https://chris-ai.github.io/ecommerce-product-page/)
+
+# 📷 Screenshot
 
 ![](./Desktop-screenshot.png)
-![](./Mobile-screenshot.png)
 
-### Links
 
-[Live demo](https://chris-ai.github.io/ecommerce-product-page/)
+# 📚 Tech stack
 
-## My process
+## Built with
 
-### Built with
+[![Tech](https://skills.thijs.gg/icons?i=javascript,html,css,scss,vue&theme=light)]()
 
-- HTML5
-- SCSS
-- CSS pseudo elements (::after, ::before)
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- Responsive Web Design
-- Re-usable components
-- [Vue.js](https://vuejs.org/) - JS library
-
-### What I learned
-
-The dask provided a training groud for the Vue.js framework. I tried to build as many re-usable components as possible. There was a good space to test my SCSS skills, this was not first time I've touched this CSS preprocessor but I'm not quite confident with it. I've used many of pseudo elements and I think that's work out.
-
-## Installation
+# ➡️ Installation
 
 ```
 npm install
@@ -78,8 +63,10 @@ npm run build
 npm run lint
 ```
 
-## Author
+# 🔗 Author
 
-- LinkedIn - [Krzysiek Kondracikowski](https://www.linkedin.com/in/krzysztof-kondracikowski-87a3491b3/)
-- Frontend Mentor - [@Chris-ai](https://www.frontendmentor.io/profile/Chris-ai)
-- Twitter - [@kondr7_krzysiek](https://twitter.com/kondr7_krzysiek)
+[![portfolio](https://img.shields.io/badge/github-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Chris-ai)
+
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://twitter.com/kondr7_krzysiek)
+
+[![twitter](https://img.shields.io/badge/frontendmentor-fefefe?style=for-the-badge&logo=&logoColor=white)](https://www.frontendmentor.io/profile/Chris-ai)
